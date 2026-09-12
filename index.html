@@ -8,71 +8,116 @@
     <script src="https://kit.fontawesome.com/f9580f06bb.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/png" href="img/sadri_gif.gif" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-    
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
+
+<style>
+    /* Par défaut, quand le petit header est actif, on cache la croix à l'intérieur de #navi */
+    #sticky-mini-header.menu-open ~ #navi .fa-xmark,
+    body:has(#sticky-mini-header.menu-open) #navi .fa-xmark {
+        display: none !important;
+    }
+</style>
 
 <script>
     function toggleNav() {
-        const nav = document.getElementById('navi');
-        nav.classList.toggle('active');
-        const html = document.getElementById('html');
-        html.classList.toggle('no-scroll');
-    }
+    const nav = document.getElementById('navi');
+    const html = document.getElementById('html');
+    const miniHeader = document.getElementById('sticky-mini-header');
+    const miniBurgerIcon = document.querySelector('.mini-burger > i');
+    const internalCloseBtn = document.querySelector('#navi .fa-xmark');
 
-    // Gestion de l'apparition propre du mini-header au scroll
-    window.addEventListener('scroll', function() {
-        const miniHeader = document.getElementById('sticky-mini-header');
-        const mainHeader = document.getElementById('main-header');
-        
-        // On récupère la hauteur du grand header pour déclencher l'apparition au bon moment
-        const headerHeight = mainHeader.offsetHeight;
+    // Alterne l'état actif du menu et du scroll
+    const isActive = nav.classList.toggle('active');
+    html.classList.toggle('no-scroll');
 
-        if (window.scrollY > headerHeight - 50) {
-            miniHeader.classList.add('show');
-        } else {
-            miniHeader.classList.remove('show');
+    // Vérifie si le mini-header est visible à l'écran
+    const isMiniHeaderActive = miniHeader.classList.contains('show');
+
+    if (isMiniHeaderActive) {
+        // Si on l'ouvre/ferme depuis le petit header :
+        // On masque la croix interne pour éviter qu'elle ne réapparaisse au clic
+        if (internalCloseBtn) {
+            internalCloseBtn.style.display = 'none';
         }
-    });
+
+        // Change l'icône du mini-burger en croix ou en barres
+        if (isActive) {
+            miniBurgerIcon.classList.remove('fa-bars');
+            miniBurgerIcon.classList.add('fa-xmark');
+        } else {
+            miniBurgerIcon.classList.remove('fa-xmark');
+            miniBurgerIcon.classList.add('fa-bars');
+        }
+    } else {
+        // Si on l'ouvre depuis le grand header :
+        // On s'assure que la croix interne est bien visible
+        if (internalCloseBtn) {
+            internalCloseBtn.style.display = 'block'; // ou 'inline-block' selon ton CSS initial
+        }
+    }
+}
+
+// Gestion de l'apparition propre du mini-header au scroll
+window.addEventListener('scroll', function() {
+    const miniHeader = document.getElementById('sticky-mini-header');
+    const mainHeader = document.getElementById('main-header');
+    
+    const headerHeight = mainHeader.offsetHeight;
+
+    if (window.scrollY > headerHeight - 50) {
+        miniHeader.classList.add('show');
+    } else {
+        miniHeader.classList.remove('show');
+        
+        // Réinitialise l'icône du mini-burger si on remonte tout en haut
+        const miniBurgerIcon = document.querySelector('.mini-burger > i');
+        if (miniBurgerIcon) {
+            miniBurgerIcon.classList.remove('fa-xmark');
+            miniBurgerIcon.classList.add('fa-bars');
+        }
+    }
+});
 </script>
 
 <body>
+    <!-- Le grand header reste 100% intact -->
     <header id="main-header">
-    <div class="menuburger">
-        <i class="fa-solid fa-bars" onclick="toggleNav()"></i>            
-        <nav id="navi">
-            <i class="fa-solid fa-xmark" onclick="toggleNav()"></i>
-            <ul>
-                <li><a href="#!">Rubrique 1</a></li>
-                <li><a href="#!">Rubrique 1</a></li>                    
-            </ul>
-        </nav>
-    </div>
-    <img src="img/sadri_gif.gif" alt="Sadri" class="logo">
-    <div class="colab">
-        <button class="brutalist-btn">LET'S COLLABORATE</button>
-    </div>
-    <div class="pixel-transition">
-        <span class="glitch-block b1"></span>
-        <span class="glitch-block b2"></span>
-        <span class="glitch-block b3"></span>
-    </div>
-</header>
+        <div class="menuburger">
+            <i class="fa-solid fa-bars" onclick="toggleNav()"></i>            
+            <nav id="navi">
+                <i class="fa-solid fa-xmark" onclick="toggleNav()"></i>
+                <ul>
+                    <li><a href="#!">Rubrique 1</a></li>
+                    <li><a href="#!">Rubrique 1</a></li>                    
+                </ul>
+            </nav>
+        </div>
+        <img src="img/sadri_gif.gif" alt="Sadri" class="logo">
+        <div class="colab">
+            <button class="brutalist-btn">LET'S COLLABORATE</button>
+        </div>
+        <div class="pixel-transition">
+            <span class="glitch-block b1"></span>
+            <span class="glitch-block b2"></span>
+            <span class="glitch-block b3"></span>
+        </div>
+    </header>
 
-<!-- Petit header compact qui apparaît au scroll -->
-<div id="sticky-mini-header" class="mini-header">
-    <div class="mini-logo">
-        <img src="img/sadri_gif.gif" alt="Sadri">
+    <!-- Petit header compact avec son icône qui se transforme en croix -->
+    <div id="sticky-mini-header" class="mini-header">
+        <div class="mini-logo">
+            <img src="img/sadri_gif.gif" alt="Sadri">
+        </div>
+        <div class="mini-colab">
+            <button class="brutalist-btn">LET'S COLLABORATE</button>
+        </div>
+        <div class="mini-burger">
+            <i class="fa-solid fa-bars" onclick="toggleNav()"></i>
+        </div>
     </div>
-    <div class="mini-colab">
-        <button class="brutalist-btn">LET'S COLLABORATE</button>
-    </div>
-    <div class="mini-burger">
-        <i class="fa-solid fa-bars" onclick="toggleNav()"></i>
-    </div>
-</div>
+
     <main>
         <div class="content">
             <h1>Bonjour</h1>
@@ -163,8 +208,6 @@
                 <li><a href="#!">sadri.coop@gmail.com</a></li>                    
             </ul>
         </div>
-        
     </footer>
 </body>
-
 </html>

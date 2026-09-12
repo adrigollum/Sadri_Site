@@ -144,6 +144,7 @@ footer{
     justify-content: space-evenly;
     padding: 2%;
     position:relative;
+    bottom: -2px;
 
 }
 footer div{
@@ -154,11 +155,11 @@ footer div{
 
 footer img {
     width: auto;
-    height: 10vh;
+    height: 5vh;
 }
 
 h2{
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 1;
     margin: 0  ;
     color: #ff66c4;
@@ -285,7 +286,7 @@ h1 {
 footer ul li a {
     text-decoration: none;
     color: #ffffff;
-    font-size: 1rem;
+    font-size: 0.7rem;
     transition: color 0.3s ease; /* Transition fluide pour le changement de couleur */
 }
 
@@ -299,11 +300,23 @@ footer ul li p{
     color: #ffffff;
 }
 
+.mini-burger i, 
+.mini-header * {
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+#sticky-mini-header.menu-open ~ * #navi .fa-xmark,
+body:has(#sticky-mini-header.menu-open) #navi .fa-xmark {
+    display: none !important;
+}
 
 nav ul li a {
     text-decoration: none;
     color: #000000;
     font-size: 2rem;
+    display: flex;
+    align-items: center;
     transition: color 0.3s ease; /* Transition fluide pour le changement de couleur */
 }
 
