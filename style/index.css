@@ -12,6 +12,7 @@ html{
   font-style: normal;
   scrollbar-width:none;
         overflow-x:hidden;
+        -webkit-tap-highlight-color: transparent;
 }
 
 html.no-scroll, 
@@ -124,11 +125,6 @@ header{
   box-shadow: 0.15rem 0.15rem 0px #000000;
 }
 
-.pixel-transition{
-    
-}
-
-
 
 main{
     background-color: #ff66c4;
@@ -188,9 +184,6 @@ nav.active {
   
 }
 
-#navi {
-    /* Plus besoin de display: none ici, tout est géré par clip-path */
-}
 
 nav .fa-solid{
     
@@ -199,12 +192,20 @@ nav .fa-solid{
 
 li{
     list-style: none;
+    margin: 2%;
 }
 
 ul{
     list-style: none;
     height: 80vh;
     font-size: 2rem;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 footer ul{
