@@ -1,0 +1,170 @@
+<html lang="fr" id="html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadri</title>
+    <link href="style/index.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f9580f06bb.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="../img/sadri_gif.gif" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+
+</head>
+
+<script>
+    function toggleNav() {
+        const nav = document.getElementById('navi');
+        nav.classList.toggle('active');
+        const html = document.getElementById('html');
+        html.classList.toggle('no-scroll');
+    }
+
+    // Gestion de l'apparition propre du mini-header au scroll
+    window.addEventListener('scroll', function() {
+        const miniHeader = document.getElementById('sticky-mini-header');
+        const mainHeader = document.getElementById('main-header');
+        
+        // On récupère la hauteur du grand header pour déclencher l'apparition au bon moment
+        const headerHeight = mainHeader.offsetHeight;
+
+        if (window.scrollY > headerHeight - 50) {
+            miniHeader.classList.add('show');
+        } else {
+            miniHeader.classList.remove('show');
+        }
+    });
+</script>
+
+<body>
+    <header id="main-header">
+    <div class="menuburger">
+        <i class="fa-solid fa-bars" onclick="toggleNav()"></i>            
+        <nav id="navi">
+            <i class="fa-solid fa-xmark" onclick="toggleNav()"></i>
+            <ul>
+                <li><a href="#!">Rubrique 1</a></li>
+                <li><a href="#!">Rubrique 1</a></li>                    
+            </ul>
+        </nav>
+    </div>
+    <img src="../img/sadri_gif.gif" alt="Sadri" class="logo">
+    <div class="colab">
+        <button class="brutalist-btn">LET'S COLLABORATE</button>
+    </div>
+    <div class="pixel-transition">
+        <span class="glitch-block b1"></span>
+        <span class="glitch-block b2"></span>
+        <span class="glitch-block b3"></span>
+    </div>
+</header>
+
+<!-- Petit header compact qui apparaît au scroll -->
+<div id="sticky-mini-header" class="mini-header">
+    <div class="mini-logo">
+        <img src="../img/sadri_gif.gif" alt="Sadri">
+    </div>
+    <div class="mini-colab">
+        <button class="brutalist-btn">LET'S COLLABORATE</button>
+    </div>
+    <div class="mini-burger">
+        <i class="fa-solid fa-bars" onclick="toggleNav()"></i>
+    </div>
+</div>
+    <main>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+        <div class="content">
+            <h1>Bonjour</h1>
+            <div>
+                <p>Content de te voir ! je suis un super titre et je raconte plein de chose et totu alors que le caca sa sent bon sana elle a dit</p>
+                <img src="/img/sadri_gif.gif" alt="">
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <img src="/img/sadri_gif.gif" alt="">
+        </div>
+        <div>
+            <h2>Rubriques</h2>
+            <ul>
+                <li><a href="#!">Rubrique 1</a></li>
+                <li><a href="#!">Rubrique 1</a></li>                    
+            </ul>
+        </div>
+        <div>
+            <h2>Contacts</h2>
+            <ul>
+                <li><a href="#!">06 52 41 02 50</a><p>&nbsp|&nbsp</p><a href="#!">06 52 41 02 50</a></li>
+                <li><a href="#!">sadri.coop@gmail.com</a></li>                    
+            </ul>
+        </div>
+        
+    </footer>
+</body>
+
+</html>

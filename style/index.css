@@ -1,0 +1,390 @@
+
+
+.bebas-neue-regular {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+html{
+    font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scrollbar-width:none;
+        overflow-x:hidden;
+}
+
+html.no-scroll, 
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh; /* Empêche le rebond élastique sur mobile */
+}
+
+body{
+    margin: 0;
+    background-color: #121212;
+    display: grid;
+    grid-template-rows: auto 1fr auto;    
+}
+
+header{
+
+    width: 90vw;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vw;
+}
+
+/* --- MINI HEADER (Caché par défaut) --- */
+.mini-header {
+    position: fixed;
+    top: -80px; /* Caché au-dessus de l'écran */
+    left: 0;
+    width: 100vw;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5vw;
+    box-sizing: border-box;
+    z-index: 999;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: top 0.3s ease-in-out; /* Glissement fluide depuis le haut */
+}
+
+/* Quand on active la classe show via JS, il descend en haut de l'écran */
+.mini-header.show {
+    top: 0;
+}
+
+/* Style des éléments à l'intérieur du mini header */
+.mini-logo img {
+    height: 35px;
+    width: auto;
+}
+
+.mini-colab .brutalist-btn {
+    margin-top: 0;
+    font-size: 0.6rem;
+    padding: 0.4em 0.8em;
+    box-shadow: 0.15rem 0.15rem 0px #000000;
+}
+
+.mini-burger {
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+    .menuburger{
+        align-self: flex-end;
+        font-size: 2rem;
+        z-index: 10;
+    }
+    .logo{
+        position: relative;
+        top: 5%;
+        height: auto;
+        width: 60%;
+    }
+    .colab {
+        margin-top: 10%;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .brutalist-btn {
+  background-color: #ff69b4; /* Rose vif similaire à l'image */
+  color: #000000;            /* Texte en noir */
+  font-family: sans-serif;   /* Police de caractères */
+  font-weight: 900;
+  font-size: 0.7rem;         /* Taille responsive en rem */
+  padding: 0.8em 1.5em;      /* Padding proportionnel à la taille du texte */
+  border: 0.2rem solid #000000; /* Bordure épaisse responsive */
+  cursor: pointer;
+  
+  /* Ombre portée décalée en rem pour rester proportionnelle */
+  box-shadow: 0.4rem 0.4rem 0px #000000;
+  
+  /* Transition fluide pour l'effet au survol */
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+/* Effet interactif au survol */
+.brutalist-btn:hover {
+  transform: translate(-0.15rem, -0.15rem);
+  box-shadow: 0.55rem 0.55rem 0px #000000;
+  color: #ffffff; /* Change la couleur du texte au survol */
+}
+
+/* Effet au clic */
+.brutalist-btn:active {
+  transform: translate(0.25rem, 0.25rem);
+  box-shadow: 0.15rem 0.15rem 0px #000000;
+}
+
+.pixel-transition{
+    
+}
+
+
+
+main{
+    background-color: #ff66c4;
+width: 100%;
+}
+    
+
+footer{
+    height: auto;
+    background-color: #121212;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2%;
+    position:relative;
+
+}
+footer div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+footer img {
+    width: auto;
+    height: 10vh;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: 1;
+    margin: 0  ;
+    color: #ff66c4;
+}
+
+nav {
+  position: fixed;
+  background-color: #ff66c4;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* --- ANIMATION EN CERCLE DEPUIS LE HAUT À DROITE --- */
+  /* Le cercle commence à une taille de 0% et est centré à 100% (droite) et 0% (haut) */
+  clip-path: circle(0% at 100% 0%);
+  visibility: hidden; /* Empêche les clics quand le menu est fermé */
+  transition: clip-path 0.5s ease-in-out, visibility 0.5s;
+  z-index: 100;
+}
+
+/* Classe active : le cercle s'agrandit pour couvrir tout l'écran (150% suffit largement) */
+nav.active {
+  clip-path: circle(150% at 100% 0%);
+  visibility: visible;
+  
+}
+
+#navi {
+    /* Plus besoin de display: none ici, tout est géré par clip-path */
+}
+
+nav .fa-solid{
+    
+    cursor: pointer; /* Ajoute un effet pointeur sur la croix/fermeture */
+}
+
+li{
+    list-style: none;
+}
+
+ul{
+    list-style: none;
+    height: 80vh;
+    font-size: 2rem;
+}
+
+footer ul{
+    list-style: none;
+    font-size: 0.7rem;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    align-self: flex-start;
+}
+
+footer ul li{
+    text-decoration: none;
+    color: #000000;
+    transition: color 0.3s ease; /* Transition fluide pour le changement de couleur */
+}
+
+/* Supprime le contour de focus/clic sur les icônes et liens */
+nav .fa-solid:focus,
+a:focus,
+button:focus {
+    outline: none;
+}
+
+/* Désactive également la sélection bleue du texte au clic si besoin */
+nav .fa-solid,
+a {
+    -webkit-tap-highlight-color: transparent; /* Pour mobile (évite le flash bleu sur iOS/Android) */
+    outline: none;
+}
+
+nav .fa-solid,
+.menuburger > .fa-solid {
+    cursor: pointer;
+    /* Transition fluide pour le retour de l'effet */
+    transition: transform 0.1s ease, filter 0.1s ease;
+}
+
+/* Effet d'enfoncement au clic (quand on appuie dessus) */
+nav .fa-solid:active,
+.menuburger > .fa-solid:active {
+    transform: scale(0.9) translateY(0.1rem);
+    /*Rétrécitlégèrementetdescendunpeupoursimulerlapression*/filter: brightness(0.8);
+    /*Assombritlégèrementl'icône pour faire l'effetd'ombre/enfoncement*/
+    -webkit-transform: scale(0.9) translateY(0.1rem);
+    -moz-transform: scale(0.9) translateY(0.1rem);
+    -ms-transform: scale(0.9) translateY(0.1rem);
+    -o-transform: scale(0.9) translateY(0.1rem);
+}
+
+.content {
+    margin: 5%;
+}
+
+.content img {
+    width: 33%;
+    height: auto;
+    padding-left: 3%;
+}
+
+.content div {
+    display: flex;
+    align-items: top;
+    justify-content: space-evenly;
+}
+
+.content div p {
+    color: #000000;
+    text-align: top;
+    margin-top: 0;
+    font-weight: 10;
+}
+
+h1 {
+    
+    margin-bottom: 3%;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Transition fluide pour le changement de couleur */
+}
+
+footer ul li{
+    display: flex;
+}
+
+footer ul li p{
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 2rem;
+    transition: color 0.3s ease; /* Transition fluide pour le changement de couleur */
+}
+
+nav ul li a:hover {
+    color: #ffffff; /* Change la couleur au survol */
+}
+
+nav ul li a:active {
+    color: #ff66c4; /* Change la couleur au survol */
+}
+
+footer ul li a:hover {
+    color: #ff66c4; /* Change la couleur au survol */
+}
+
+ nav .fa-solid{
+    right: 1px;
+    cursor: pointer; 
+    align-self: flex-end;
+}
+
+#navi{
+    padding: 4vh 5vw 4vh 5vw;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+
+@media (min-width: 1024px) {
+
+    html{
+        scrollbar-width:none;
+        overflow-x:hidden;
+    }
+
+  body {
+    background-color: #121212;
+    width: 90vw;
+    display: grid;
+    grid-template-rows: auto 1fr auto; 
+    
+    
+  }
+  .logo {
+    width: 20%;
+  }
+  .colab {
+    margin-top: 2%;
+    z-index: 5;
+  }
+  header{
+    padding-top: 2%;
+  }
+  .brutalist-btn{
+    font-size: 1.1rem;
+  }
+
+  nav .fa-solid{
+    right: 1px;
+    cursor: pointer; 
+    align-self: flex-end;
+}
+
+#navi{
+    padding: 4vh 5vw 4vh 5vw;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden; /* Empêche le défilement du contenu derrière le menu */
+}
+
+footer{
+    height: 10vh;
+    background-color: #121212;
+    position:relative;
+
+}
+
+}
