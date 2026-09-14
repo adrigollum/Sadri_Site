@@ -1,0 +1,40 @@
+header{
+    background-image: url("../img/DA-Sadri.png");
+    height: 35vh;
+    background-size: 180%;
+}
+
+.colab{
+    width: 55%;
+    top: 23%;
+    position: relative;
+    align-self: center;
+    background-color: #ff66c4;
+    border: solid ;
+    z-index: 2;
+}
+
+.colab h1{
+    font-weight: 200;
+    margin: 2%;
+    font-size: 1.5rem;
+}
+
+header img{
+position: absolute;
+height: 30vh;
+width: fit-content;
+top: 3vh;
+left: 35vw;
+}
+
+.bordure{
+    background-color: #121212;
+    height: 1vh;
+}
+
+@media (min-width: 1024px) {
+
+
+
+}
