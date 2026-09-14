@@ -291,19 +291,42 @@ nav .fa-solid:active,
 }
 
 .content {
-    margin: 5%;
+    padding: 5%;
 }
 
 .content img {
     width: 50%;
-    height: auto;
+    height: fit-content;
     padding-left: 3%;
+    float: right;
+    shape-outside: circle(50%);
 }
 
-.content div {
-    display: flex;
-    align-items: top;
-    justify-content: space-between;
+.content div{
+    display: flow-root;
+}
+
+#noir{
+    color: white;
+    background-color: #121212;
+}
+
+#noir p{
+    color: white;
+}
+
+p{
+  text-justify: inter-word;
+  word-break: normal;
+  hyphens: auto;
+}
+
+#noir img{
+    float: left;
+}
+
+#noir h1{
+    text-align: end;
 }
 
 .content div p {
@@ -450,6 +473,7 @@ footer{
     width: 30%;
     height: auto;
     padding-left: 3%;
+    shape-outside:none;
 }
 
 h1 {
@@ -460,6 +484,68 @@ h1 {
 .content div p {
     font-size: 1.5rem;
     padding-top: 1%;
+}
+
+.mini-header {
+ height: 10vh; 
+ top: -10vh; /* Caché au-dessus de l'écran */
+}
+
+.mini-header .fa-solid {
+    font-size: 2rem;
+
+}
+
+.mini-header .brutalist-btn{
+    font-size: 1.5rem;
+}
+
+.mini-logo img {
+    height: auto;
+    width: 4vw;
+
+}
+
+.mini-burger{
+    height: auto;
+    width: 4vw;
+}
+
+li{
+    margin: 1.5%;
+}
+
+footer img{
+    width:fit-content;
+    height: 10vh;
+    align-self: center;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+footer ul{
+    font-size: 2rem;
+}
+
+footer ul li a{
+    font-size: 2rem;
+}
+
+footer{
+    padding: 2%;
+}
+footer div{
+    align-self: center;
+}
+
+footer div:has(img){
+    width: 12%;
+}
+
+.navi ul{
+top: 10vh;
 }
 
 }
