@@ -21,6 +21,10 @@ html{
         -webkit-tap-highlight-color: transparent;
 }
 
+#pageactuel{
+    color: #ffffff;
+}
+
 html.no-scroll, 
 body.no-scroll {
     overflow: hidden;
@@ -457,6 +461,10 @@ footer ul li a:hover {
     overflow: hidden; /* Empêche le défilement du contenu derrière le menu */
 }
 
+#navi ul{
+    margin-top: 10vh;
+}
+
 footer{
     height: 10vh;
     background-color: #121212;
@@ -585,5 +593,9 @@ main #pixel-rose{
     top: -5vh;
 }
 
+nav ul li a {
+    
+    font-size: 4rem;
+}
 
 }

@@ -93,10 +93,11 @@ window.addEventListener('scroll', function() {
             <nav id="navi">
                 <i class="fa-solid fa-xmark" onclick="toggleNav()"></i>
                 <ul>
+                    <li><a href="index.html">Acceuil</a></li>
                     <li><a href="#!">Nos Objectifs</a></li>
                     <li><a href="#!">Qui sommes nous ?</a></li> 
                     <li><a href="#!">Nos projets</a></li>      
-                    <li><a href="#!">Collaborer ensemble</a></li>          
+                    <li><a id="pageactuel" >Collaborer ensemble</a></li>          
                     <li><a href="#!">Contact</a></li>       
                 </ul>
             </nav>
@@ -145,9 +146,13 @@ window.addEventListener('scroll', function() {
                     <div class="form-group">
                         <textarea placeholder="Votre super message ici !" class="form-control" name="message" rows="10" required></textarea>
                     </div>
-                    <button type="submit" class="brutalist-btn">Let's Collaborate</button>
+                    <button type="submit" class="brutalist-btn">Envoyer à Sadri</button>
                 </form> 
             </div>
+        </div>
+        <div class="pixel-transition">
+            <img id="pixel-noir" src="img/pixelrose.png" alt="">
+            <img id="pixel-rose" src="img/pixelnoir.png" alt="">
         </div>
         <div class="content" id="noir">
             <h1>Formulaire de contact</h1>
@@ -173,8 +178,8 @@ window.addEventListener('scroll', function() {
         <div>
             <h2>Contacts</h2>
             <ul>
-                <li><a href="#!">06 52 41 02 50</a><p>&nbsp|&nbsp</p><a href="#!">06 52 41 02 50</a></li>
-                <li><a href="#!">sadri.coop@gmail.com</a></li>                    
+                <li><a href="tel:+33652410250">06 52 41 02 50</a><p>&nbsp|&nbsp</p><a href="tel:+33652410250">06 52 41 02 50</a></li>
+                <li><a href="mailto:sadri.coop@gmail.com?subject=Salut%20Sadri%20" target="_blank">sadri.coop@gmail.com</a></li>                    
             </ul>
         </div>
     </footer>
