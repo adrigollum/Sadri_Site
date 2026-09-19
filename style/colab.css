@@ -43,6 +43,43 @@ left: 35vw;
     font-weight: 600;
 }
 
+.content .form-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+}
+
+
+.form-control{
+    width: 100%;
+}
+
+.form-group{
+    width: 100%;
+}
+
+#nom{
+    width: 35%;
+}
+
+#mail{
+    width: 60%;
+}
+
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+textarea{
+    width: 100%;
+    margin-bottom: 2vh;
+}
+
 @media (min-width: 1024px) {
 
 header{
