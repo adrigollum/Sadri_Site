@@ -1,128 +1,169 @@
-header{
+header {
     background-image: url("../img/DA-Sadri.png");
     height: 35vh;
     background-size: 180%;
 }
 
-.colab{
+.colab {
     width: 65%;
     top: 23%;
     position: relative;
     align-self: center;
     background-color: #ff66c4;
-    border: solid ;
+    border: solid 0.2rem #000000;
     z-index: 2;
+    box-shadow: 0.3rem 0.3rem 0px #000000;
 }
 
-.colab h1{
+.colab h1 {
     font-weight: 200;
     margin: 2%;
     font-size: 1.5rem;
 }
 
-header img{
-position: absolute;
-height: 30vh;
-width: fit-content;
-top: 3vh;
-left: 35vw;
+header img {
+    position: absolute;
+    height: 30vh;
+    width: fit-content;
+    top: 3vh;
+    left: 35vw;
 }
 
-.bordure{
+.bordure {
     background-color: #121212;
     height: 1vh;
 }
 
-.mini-header .colab{
+.mini-header .colab {
     margin: 0;
     width: 50%;
+    box-shadow: 0.15rem 0.15rem 0px #000000;
+    border: 0.15rem solid #000000;
 }
 
-.mini-header .colab h1{
-        font-size: 1.1rem;
+.mini-header .colab h1 {
+    font-size: 1.1rem;
     font-weight: 600;
 }
 
-.content .form-row{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1vh;
-}
+/* --- STYLE DU FORMULAIRE BRUTALISTE --- */
 
-
-.form-control{
-    width: 100%;
-}
-
-.form-group{
-    width: 100%;
-}
-
-#nom{
-    width: 35%;
-}
-
-#mail{
-    width: 60%;
-}
-
-
-form{
+form {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    margin-top: 2vh;
 }
 
-textarea{
+.form-group {
     width: 100%;
     margin-bottom: 2vh;
 }
 
+.content .form-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4%;
+    margin-bottom: 0;
+}
+
+#nom {
+    width: 38%;
+}
+
+#mail {
+    width: 58%;
+}
+
+/* Champs de texte et textareas stylisés */
+.form-control {
+    width: 100%;
+    font-family: "Raleway", sans-serif;
+    font-size: 1rem;
+    padding: 0.8rem 1rem;
+    background-color: #ffffff;
+    border: 0.2rem solid #000000;
+    box-shadow: 0.3rem 0.3rem 0px #000000;
+    box-sizing: border-box;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+    outline: none;
+}
+
+/* Effet au focus (quand on clique dedans) */
+.form-control:focus {
+    transform: translate(-0.1rem, -0.1rem);
+    box-shadow: 0.45rem 0.45rem 0px #000000;
+    background-color: #fff9fd;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Bouton du formulaire aligné avec les autres .brutalist-btn */
+#formulaire .brutalist-btn {
+    margin-top: 1vh;
+    align-self: center;
+}
+
+
+/* --- VERSION DESKTOP --- */
 @media (min-width: 1024px) {
 
-header{
-    height: 56vh;
-    background-size: 100%;
+    header {
+        height: 56vh;
+        background-size: 100%;
+    }
 
-}
+    #main-header .colab {
+        width: 40%;
+        top: 35%;
+        position: relative;
+        align-self: center;
+        background-color: #ff66c4;
+        border: 0.3rem solid #000000;
+        box-shadow: 0.5rem 0.5rem 0px #000000;
+        z-index: 2;
+    }
 
-#main-header .colab{
-    width: 40%;
-    top: 35%;
-    position: relative;
-    align-self: center;
-    background-color: #ff66c4;
-    border: solid ;
-    z-index: 2;
-}
+    #main-header .colab h1 {
+        font-weight: 800;
+        margin: 2%;
+        font-size: 4rem;
+    }
 
-#main-header .colab h1{
-    font-weight: 800;
-    margin: 2%;
-    font-size: 4rem;
-}
+    #main-header img {
+        position: absolute;
+        height: 50vh;
+        width: fit-content;
+        top: 5vh;
+        left: 55vw;
+    }
 
+    .mini-header .colab {
+        margin: 0;
+        width: 30%;
+        top: 0;
+    }
 
-#main-header img{
-position: absolute;
-height: 50vh;
-width: fit-content;
-top: 5vh;
-left: 55vw;
-}
+    .mini-header .colab h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        margin: 0.5%;
+    }
 
-.mini-header .colab{
-    margin: 0;
-    width: 30%;
-    top: 0;
-}
+    .form-control {
+        font-size: 1.5rem;
+        padding: 1rem 1.2rem;
+        border: 0.25rem solid #000000;
+        box-shadow: 0.4rem 0.4rem 0px #000000;
+    }
 
-.mini-header .colab h1{
-    font-size: 3rem;
-    font-weight: 600;
-    margin: 0.5%;
-}
-
+    .form-control:focus {
+        box-shadow: 0.6rem 0.6rem 0px #000000;
+    }
 }
