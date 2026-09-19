@@ -5,7 +5,7 @@ header{
 }
 
 .colab{
-    width: 55%;
+    width: 65%;
     top: 23%;
     position: relative;
     align-self: center;
@@ -33,8 +33,59 @@ left: 35vw;
     height: 1vh;
 }
 
+.mini-header .colab{
+    margin: 0;
+    width: 50%;
+}
+
+.mini-header .colab h1{
+        font-size: 1.1rem;
+    font-weight: 600;
+}
+
 @media (min-width: 1024px) {
 
+header{
+    height: 56vh;
+    background-size: 100%;
 
+}
+
+#main-header .colab{
+    width: 40%;
+    top: 35%;
+    position: relative;
+    align-self: center;
+    background-color: #ff66c4;
+    border: solid ;
+    z-index: 2;
+}
+
+#main-header .colab h1{
+    font-weight: 800;
+    margin: 2%;
+    font-size: 4rem;
+}
+
+
+#main-header img{
+position: absolute;
+height: 50vh;
+width: fit-content;
+top: 5vh;
+left: 55vw;
+}
+
+.mini-header .colab{
+    margin: 0;
+    width: 30%;
+    top: 0;
+}
+
+.mini-header .colab h1{
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 0.5%;
+}
 
 }
